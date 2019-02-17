@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tccs on Claudio Davi</title>
+    <link>http://claudiodavi.com/tcc/</link>
+    <description>Recent content in Tccs on Claudio Davi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="http://claudiodavi.com/tcc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Role Identification Platform</title>
+      <link>http://claudiodavi.com/tcc/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/tcc/intro/</guid>
+      <description>Claudio Davi de Souza
+Role Identification Platform, An Automated Tool To Identify Roles Inside Self-Organizing Software Development Teams Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em Engenharia de Software da Universidade Federal do Pampa como requisito parcial para a obtenção do título de Bacharel em Engenharia de Software.
+Supervisor: Pr. Dr. Marcelo Resende Thielo
+Acknowledgements I would like to give a very special thanks to Marcelo Thielo, for helping me through all of this work, for coping with my paranoia and motivating me during the process.</description>
+    </item>
+    
+  </channel>
+</rss>

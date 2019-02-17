@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Claudio Davi</title>
+    <link>http://claudiodavi.com/docs/</link>
+    <description>Recent content in Docs on Claudio Davi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="http://claudiodavi.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Books</title>
+      <link>http://claudiodavi.com/docs/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/books/</guid>
+      <description>Lista de Livros para 2019  The Master Algorithm The Signal and the Noise Thinking Fast and Slow Beyond Good and Evil The Gene AI Superpowers Sapiens Nudge Machine Learning Yearning Outliers The Hundred Pages Machine Learning Book  Frases que merecem nota Thinking Fast and Slow
+ &amp;ldquo;Our conforting conviction that the world makes sense rests on a secure foundation: Our almost unlimited ability to ignore our ignorance&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://claudiodavi.com/docs/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/python/</guid>
+      <description>Python Em construção&amp;hellip;
+Visite o Blog por enquanto ;)</description>
+    </item>
+    
+    <item>
+      <title>Curriculo</title>
+      <link>http://claudiodavi.com/docs/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/cv/</guid>
+      <description>Claudio Davi Souza Engenheiro de Software | Cientista de Dados Sou comunicativo, espontâneo e motivado por novas descobertas. Atualmente trabalho focado na criação e manutenção de produtos de Machine Learning, voltados principalmente às decisões de negócio e análise preditiva de mercado.
+Habilidades
+ Linguagens: Python | Java | C# | SQL Frameworks: Flask | Serverless | Spring | .NET Outros: AWS | Tensorflow | Pytorch  Projetos claudiodavi.com | claudiodavi.</description>
+    </item>
+    
+  </channel>
+</rss>

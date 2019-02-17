@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://claudiodavi.com/docs/books/</loc>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/posts/03-emprestimo/</loc>
+    <lastmod>2018-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/posts/02-propagandas/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/posts/01-ecommerce/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/posts/00-python-snippets/</loc>
+    <lastmod>2017-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/docs/python/</loc>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/docs/cv/</loc>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/docs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/</loc>
+    <lastmod>2018-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/posts/</loc>
+    <lastmod>2018-09-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/tcc/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/tcc/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

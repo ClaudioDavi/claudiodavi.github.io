@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisando Propagandas | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2f 02-propagandas\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>Ceticismo de Dados</em></p>
+
+<ul>
+<li><a href="http://claudiodavi.com/posts/"><strong>Blog</strong></a></li>
+<li><a href="http://claudiodavi.com/docs/python/">Tutoriais e Anotações</a>
+
+<ul>
+<li><a href="http://claudiodavi.com/docs/python/">Python</a></li>
+<li><a href="http://claudiodavi.com/docs/books/">Livros e Referencias</a></li>
+</ul></li>
+<li><a href="http://claudiodavi.com/docs/cv/"><strong>Curriculo</strong></a></li>
+<li><a href="http://claudiodavi.com/tcc/intro/">Trabalho de Conclusão de curso - ES</a></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Analisando Propagandas</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h2 id="introdução">Introdução</h2>
+
+<p>No post da semana passada <a href="http://claudiodavi.com/posts/01-ecommerce/">Link</a> vimos a utilização de um método chamado <strong>Regressão Linear</strong> para procurar possíveis melhorias dentro de uma empresa para melhorar os seus lucros. Esta semana, veremos um método também de regressão chamado <em><strong>Regressão Logística</strong></em>.</p>
+
+<p>Para este projeto, usaremos dados de acesso à internet de usuários, coletados por uma empresa de <em>Marketing</em>, e verificar se eles clicaram ou não em uma propaganda -advertisement- na tela. Tentaremos responder a seguinte pergunta:</p>
+
+<blockquote>
+<p>“Baseados apenas nos dados coletados, o usuário clicaria ou não na propaganda?”</p>
+</blockquote>
+
+<h3 id="metodologia">Metodologia</h3>
+
+<p>Como de costume, começaremos explorando um pouco dos nossos dados, faremos algumas visualizações e depois testaremos nosso modelo em cima de dados de teste. Como sempre, o código para quem quiser seguir olhando a implementação está disponível no meu <a href="http://github.com/claudiodavi">Github</a>.</p>
+
+<h2 id="análise">Análise</h2>
+
+<p>Verificando a tabela temos a estrutura vista na Figura 1.:</p>
+
+<p>Figura 1. Estrutura dos dados</p>
+
+<p>A descrição das colunas é a seguinte:</p>
+
+<ul>
+<li><strong>Daily</strong> Time Spent on Site: Tempo gasto no site em minutos</li>
+<li><strong>Age</strong>: Idade do usuário em anos.</li>
+<li><strong>Area Income</strong>: Média salarial anual da região do usuário</li>
+<li><strong>Daily Internet Usage</strong>: Média de minutos por dia de consumo de internet.</li>
+<li><strong>Male</strong>: Caso o usuário é Homem (1 para Sim, 0 para não)</li>
+<li><strong>Clicked on Ad</strong>: 0 ou 1 indicando se o AD foi clicado ou não.</li>
+</ul>
+
+<p>Eu cortei propositalmente algumas colunas da tabela, neste artigo, utilizaremos apenas as colunas acima.</p>
+
+<p>Vamos começar verificando a distribuição de idade dos nossos usuários, tentaremos identificar qual a faixa etária mais presente no nosso conjunto de dados. (Figura 2)</p>
+
+<p>Figura 2. Distribuição de Idade</p>
+
+<p>A maioria dos nossos usuários aparentam ter entre 30 a 40 anos de idade, o que já nos dá uma indicação de um público médio do website. Outra verificação que podemos fazer, é a correlação entre a idade e a média anual do salário da região que essas pessoas moram (Figura 3).</p>
+
+<p>Figura 3. Idade vs Salário Anual</p>
+
+<p>Como já vimos que a maioria dos nossos usuários pertence a faixa etária 30–40 anos, conseguimos também notar que essas pessoas vivem em boas condições em áreas de maior poder aquisitivo.</p>
+
+<p>Agora vamos tentar identifica se a idade é influente no tempo de sessão no site. Vamos usar uma visualização diferente, onde os valores mais escuros representam uma maior concentração de dados, no post da semana passada, utilizamos uma visualização com hexágonos, desta vez (pra não ficar repetitivo) vamos visualizar com profundidade (Figura 4).</p>
+
+<p>Figura 4. Tempo no Site vs Idade</p>
+
+<p>Conseguimos mais algumas informações bastante relevantes. Podemos notar que a grande maioria dos nossos usuários passa em média 80 minutos no site e tem entre 28 e 35 anos.</p>
+
+<p>Outra informação relevante que precisamos antes de começar: Qual a relação entre o tempo total gasto na internet e o tempo gasto no nosso site?</p>
+
+<p>Figura 5. Tempo de Internet vs Tempo no Website</p>
+
+<p>Como esperado, quando mais tempo se passa na internet, maior a probabilidade de se passar mais tempo no nosso website.</p>
+
+<p>Antes de passar para a próxima fase, vamos verificar se esquecemos de checar algumas coisa, para isso, plotaremos em uma única imagem todas as relações entre os atributos numéricos (Figura 6).</p>
+
+<p>Figura 6. Gráfico de Pares</p>
+
+<p>Parece que dessa vez deixamos passar bastante coisa. Algumas coisas que podemos notar aqui:</p>
+
+<ul>
+<li>Quem passa mais tempo no site tem mais chances de clicar em um AD.</li>
+<li>Pessoas mais novas costumam clicar mais.</li>
+<li>Pessoas que moram em áreas mais nobres clicam mais nos nossos ADs.</li>
+<li>Não existe diferença notável entre público masculino e feminino.</li>
+</ul>
+
+<p>Agora que já conseguimos extrair bastante informação e conhecemos bem nossos dados, vamos aplicar o modelo de regressão logística.</p>
+
+<h2 id="regressão-logística">Regressão Logística</h2>
+
+<p>Com um modelo padrão de regressão logística, conseguimos obter um resultado bastante satisfatório. Na semana passada, vimos os conceitos de <em>MAE</em> e <em>RMSE</em>, dessa vez essas métricas não se aplicam, portanto avaliaremos o modelo a partir da sua <strong>precisão</strong> e do seu <strong>recall</strong>.</p>
+
+<h3 id="precision-recall">Precision &amp; Recall</h3>
+
+<ul>
+<li><strong><em>Precisão</em></strong> é a proporção de verdadeiros positivos em todos os resultados positivos obtidos. A ideia é responder: Qual a proporção dos resultados positivos retornados não são falsos positivos?</li>
+<li><strong><em>Recall</em></strong>, por sua vez, responde a pergunta: Qual a proporção de verdadeiros positivos foi identificado corretamente? Nesta métrica, avaliamos em conjunto os falsos negativos.</li>
+</ul>
+
+<h3 id="análise-dos-resultados">Análise dos Resultados</h3>
+
+<p>Agora que já estamos mais familiarizados com os conceitos, podemos verificar nossos resultados:</p>
+
+<p>Figura 7. Precision - Recall</p>
+
+<p>A Figura 7. nos mostra uma média de 92% de acerto para <em>precision</em> e <em>recall</em>, que para nossos fins é um ótimo resultado. Isso quer dizer que inserindo os dados de um usuário qualquer, conseguimos predizer com quase certeza se ele clicaria ou não em um AD. Vamos a um exemplo:</p>
+
+<p>Marcelo tem 25 anos, fica em média 240 minutos (4 horas) na internet por dia e passa cerca de 30 minutos no nosso site. Ele vive em uma área da sua cidade onde a média salarial anual é de R\$25.000,00. Nossos dados de entrada então seriam: <code>[30,25,25000,240,1]</code>. Neste caso, muito provavelmente Marcelo não clicaria na propaganda, nosso modelo retorna uma probabilidade de 87.5% de chance de ignorar o AD e 12.5% de chance do Marcelo interagir com ele.</p>
+
+<p>Regressão logística é a técnica de regressão padrão para quem precisa que a saída sejam dados binários. É bastante utilizada em análise preditiva e para descrever a relação entre variáveis lineares e nominais com uma saída binária.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introdução">Introdução</a>
+<ul>
+<li><a href="#metodologia">Metodologia</a></li>
+</ul></li>
+<li><a href="#análise">Análise</a></li>
+<li><a href="#regressão-logística">Regressão Logística</a>
+<ul>
+<li><a href="#precision-recall">Precision &amp; Recall</a></li>
+<li><a href="#análise-dos-resultados">Análise dos Resultados</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inicio on Claudio Davi</title>
+    <link>http://claudiodavi.com/</link>
+    <description>Recent content in Inicio on Claudio Davi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://claudiodavi.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Books</title>
+      <link>http://claudiodavi.com/docs/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/books/</guid>
+      <description>Lista de Livros para 2019  The Master Algorithm The Signal and the Noise Thinking Fast and Slow Beyond Good and Evil The Gene AI Superpowers Sapiens Nudge Machine Learning Yearning Outliers The Hundred Pages Machine Learning Book  Frases que merecem nota Thinking Fast and Slow
+ &amp;ldquo;Our conforting conviction that the world makes sense rests on a secure foundation: Our almost unlimited ability to ignore our ignorance&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Analise de Emprestimo</title>
+      <link>http://claudiodavi.com/posts/03-emprestimo/</link>
+      <pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/03-emprestimo/</guid>
+      <description>Introdução Depois de discutir dois métodos de regressão nos dois posts anteriores (Regressão Linear e Regressão Logística). Vamos explorar um método diferente hoje: Árvores de decisão.
+Metodologia Como de costume, faremos uma análise, algumas visualizações para entender nossos dados e depois utilizaremos nosso modelo de Machine Learning. Nossos dados dessa vez vêm de uma plataforma chamada Lending Club que disponibiliza os dados no seu website.
+O Lending Club é uma plataforma de empréstimos americana onde pessoas podem encontrar outras pessoas para pegar empréstimos pessoais.</description>
+    </item>
+    
+    <item>
+      <title>Analisando Propagandas</title>
+      <link>http://claudiodavi.com/posts/02-propagandas/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/02-propagandas/</guid>
+      <description>Introdução No post da semana passada Link vimos a utilização de um método chamado Regressão Linear para procurar possíveis melhorias dentro de uma empresa para melhorar os seus lucros. Esta semana, veremos um método também de regressão chamado Regressão Logística.
+Para este projeto, usaremos dados de acesso à internet de usuários, coletados por uma empresa de Marketing, e verificar se eles clicaram ou não em uma propaganda -advertisement- na tela.</description>
+    </item>
+    
+    <item>
+      <title>Analisando dados de um Ecommerce</title>
+      <link>http://claudiodavi.com/posts/01-ecommerce/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/01-ecommerce/</guid>
+      <description>Introdução Quando comecei a estudar Data Science uma das primeiras coisas que nos deparamos é com Regressão linear. E o exemplo clássico disso é o famoso caso do preço de uma casa baseado no seu tamanho.
+Definição do problema Neste artigo pretendo apresentar um exemplo real (porém com dados Fakes) de uma análise que utiliza Regressão Linear para auxiliar um e-commerce a melhorar o seu lucro respondendo a pergunta:</description>
+    </item>
+    
+    <item>
+      <title>Python Snippets</title>
+      <link>http://claudiodavi.com/posts/00-python-snippets/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/00-python-snippets/</guid>
+      <description>Introdução Como desenvolvedor, temos muitos desafios interessantes e divertidos para solucionar durante o nosso dia a dia. Alguns deles, acabam sendo dentro da nossa própria code-base, outros podem ser resolvidos com alguns snippets e hacks utilizando outras linguagens e técnicas.
+Recentemente surgiu um desafio que foi bastante divertido pra resolver, principalmente porque seria bastante complexo de resolver em JAVA.
+A ideia é a seguinte: Dado um arquivo com centenas de linhas relativamente longas e formatado em JSON, meu objetivo era identificar quais dessas linhas eram similares o bastante que com poucas alterações pudessem ser unificadas.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://claudiodavi.com/docs/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/python/</guid>
+      <description>Python Em construção&amp;hellip;
+Visite o Blog por enquanto ;)</description>
+    </item>
+    
+    <item>
+      <title>Curriculo</title>
+      <link>http://claudiodavi.com/docs/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/cv/</guid>
+      <description>Claudio Davi Souza Engenheiro de Software | Cientista de Dados Sou comunicativo, espontâneo e motivado por novas descobertas. Atualmente trabalho focado na criação e manutenção de produtos de Machine Learning, voltados principalmente às decisões de negócio e análise preditiva de mercado.
+Habilidades
+ Linguagens: Python | Java | C# | SQL Frameworks: Flask | Serverless | Spring | .NET Outros: AWS | Tensorflow | Pytorch  Projetos claudiodavi.com | claudiodavi.</description>
+    </item>
+    
+    <item>
+      <title>Role Identification Platform</title>
+      <link>http://claudiodavi.com/tcc/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/tcc/intro/</guid>
+      <description>Claudio Davi de Souza
+Role Identification Platform, An Automated Tool To Identify Roles Inside Self-Organizing Software Development Teams Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em Engenharia de Software da Universidade Federal do Pampa como requisito parcial para a obtenção do título de Bacharel em Engenharia de Software.
+Supervisor: Pr. Dr. Marcelo Resende Thielo
+Acknowledgements I would like to give a very special thanks to Marcelo Thielo, for helping me through all of this work, for coping with my paranoia and motivating me during the process.</description>
+    </item>
+    
+  </channel>
+</rss>

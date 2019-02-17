@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisando dados de um Ecommerce | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2f 01-ecommerce\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>Ceticismo de Dados</em></p>
+
+<ul>
+<li><a href="http://claudiodavi.com/posts/"><strong>Blog</strong></a></li>
+<li><a href="http://claudiodavi.com/docs/python/">Tutoriais e Anotações</a>
+
+<ul>
+<li><a href="http://claudiodavi.com/docs/python/">Python</a></li>
+<li><a href="http://claudiodavi.com/docs/books/">Livros e Referencias</a></li>
+</ul></li>
+<li><a href="http://claudiodavi.com/docs/cv/"><strong>Curriculo</strong></a></li>
+<li><a href="http://claudiodavi.com/tcc/intro/">Trabalho de Conclusão de curso - ES</a></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Analisando dados de um Ecommerce</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h2 id="introdução">Introdução</h2>
+
+<p>Quando comecei a estudar <em>Data Science</em> uma das primeiras coisas que nos deparamos é com <strong>Regressão linear</strong>. E o exemplo clássico disso é o famoso caso do preço de uma casa baseado no seu tamanho.</p>
+
+<h3 id="definição-do-problema">Definição do problema</h3>
+
+<p>Neste artigo pretendo apresentar um exemplo real (porém com dados Fakes) de uma análise que utiliza Regressão Linear para auxiliar um e-commerce a melhorar o seu lucro respondendo a pergunta:</p>
+
+<blockquote>
+<p><em>“No que devemos investir para melhorar o nosso retorno financeiro?”</em></p>
+</blockquote>
+
+<h3 id="metodologia">Metodologia</h3>
+
+<p>Nós vamos começar analisando a estrutura dos dados, depois faremos algumas visualizações e por fim, apresentar os resultados, onde eu mostro que somos capazes de estimar quanto um usuário gastaria por ano dado seu histórico de sessão. E ainda, responder a pergunta principal. Por fim, quem quiser acompanhar o código, o projeto está disponível no meu Github.</p>
+
+<blockquote>
+<p>Importante: Não entrarei em detalhes sobre como funcionam os algoritmos apresentados aqui. Este post tem foco no valor entregue para a empresa dona dos dados.</p>
+</blockquote>
+
+<h2 id="análise">Análise</h2>
+
+<p>Inicialmente verifiquei a estrutura dos dados que podemos ver na Figura 1.</p>
+
+<p><img src="images/ecommerce/tabela.png" alt="Figura 1" />
+E-commerce Dataset — 5 primeiras colunas</p>
+
+<p>A descrição de cada uma delas é a seguinte:</p>
+
+<ul>
+<li>Avg. Session Length: Tempo médio de atendimento.</li>
+<li>Time on App: Tempo médio gasto no App em minutos</li>
+<li>Time on Website: Tempo médio gasto no Website em minutos</li>
+<li>Length of Membership: Quantidade de anos que um usuário é cliente (Período Cadastral)</li>
+</ul>
+
+<p>Inicialmente apenas por essa descrição e estrutura que vimos acima, já podemos ter uma ideia de por onde começar. Vamos verificar a relação entre o tempo de sessão e o gasto anual para cada plataforma (Web ou Aplicativo).</p>
+
+<p>Figura 2. Tempo no Website vs Gasto Anual</p>
+
+<p>Na Figura 2, a gente consegue ver uma baixa correlação entre o tempo no Website e o Gasto Anual. Os números são bastante balanceados, tendendo para uma área onde o tempo de fato tem influência no gasto anual, mas muito pouco.</p>
+
+<p>Agora vamos analisar o tempo no App em relação ao Gasto Anual:</p>
+
+<p>Figura 3. Tempo no App vs Gasto Anual</p>
+
+<p>Tivemos muito mais sucesso agora. Podemos notar uma clara correlação:</p>
+
+<blockquote>
+<p>Quanto mais tempo gasto no Aplicativo, maior a probabilidade de se gastar mais dinheiro.</p>
+</blockquote>
+
+<p>Já que o aplicativo se mostra mais promissor, vamos avaliar na Figura 4 se o período cadastral do cliente influencia na quantidade de minutos que ele fica online no App.</p>
+
+<p>Figura 4. Tempo no Aplicativo vs Período Cadastral</p>
+
+<p>Podemos notar algumas coisas na visualização acima.</p>
+
+<p>A média geral da sessão de quem usa o aplicativo fica em torno de 11 a 13 minutos para aqueles com 3 a 4 anos de uso.
+Quem tem mais de 4 anos de uso do sistema tende a ficar mais tempo online
+Com essas informações apenas, podemos já começar a criar ações de Marketing para o público ativo a mais tempo. São dessas pessoas que precisamos da lealdade e manter o uso do aplicativo sempre alto.</p>
+
+<p>Falando nisso, vamos aproveitar para ver a relação entre o período cadastral e o valor gasto anualmente.</p>
+
+<p>Figura 5. Peíodo Cadastral vs Gasto Anual</p>
+
+<p>Nossos dados corroboram a inferência anterior.</p>
+
+<h3 id="conclusão-da-análise">Conclusão da Análise</h3>
+
+<blockquote>
+<p>Quanto mais tempo um usuário é membro do serviço, mais dinheiro ele tende a gastar.</p>
+</blockquote>
+
+<h2 id="regressão-linear">Regressão Linear</h2>
+
+<p>Depois de todos esses dados e essas análises, conseguimos chegar em um modelo de regressão linear para predizer o gasto anual de um usuário a partir de suas informações de sessão e tempo de registro.</p>
+
+<p>Depois de treinar o modelo, vamos avaliar os resultados em conjunto com os dados de teste:</p>
+
+<p>Figura 6. Dados de Teste vs Predição</p>
+
+<p>Analisando o resultado do treinamento da regressão, temos uma variância bem pequena em relação ao previsto com os dados reais.</p>
+
+<p>Existem algumas maneiras de se verificar a qualidade de um modelo de Machine Learning. Vamos aqui olhar os resultados de duas métricas para o modelo anterior.</p>
+
+<ul>
+<li>MAE: Mean Absolute Error = Média da soma dos erros.</li>
+<li>RMSE: Root Mean Square Error = Raiz quadrada da média dos erros elevados ao quadrado.</li>
+</ul>
+
+<p>Ambos os valores representam acurácia do modelo e são orientados à 0. Quanto menor o número melhor. Como o RMSE tira o quadrado dos erros antes, ele tende a punir erros maiores, trazendo coeficiente de erro muito maior do que apenas a média absoluta. Punir erros maiores significa o seguinte:</p>
+
+<p>Dado uma lista de erros <code>x = [2, 2, 2]</code> e outra lista de erros <code>y = [2, 4, 0]</code> ambas possuem a mesma média absoluta, ou seja <code>MAE(x) = 3 e MAE(y) = 3</code>. Porém um erro de 4 unidades é mais grave do que um erro de 2 unidades, mesmo tendo acertado perfeitamente um dos valores. Utilizando RMSE teremos <code>RMSE(x) = 3,46</code> e <code>RMSE(y) = 4,47</code>
+Neste caso temos um <code>MAE de 8.53</code> e um <code>RMSE de 10.75</code>. O que é bastante positivo pois são dois valores bastante baixos considerando que nosso valor a ser predito bate na casa das centenas.</p>
+
+<p>Antes de responder a pergunta inicial vamos a mais um teste. Digamos que um usuário tenha 2 anos de período cadastral e passa em média: 20 minutos no aplicativo por dia, 10 minutos no website por sessão e cada vez que faz uma compra, leva 15 minutos. Quanto esse usuário gastaria por ano?</p>
+
+<p>A resposta para essa pergunta vem do nosso modelo. Inserindo esses dados no modelo temos a resposta: Aproximadamente R\$220.</p>
+
+<p>Agora, para a pergunta principal:</p>
+
+<blockquote>
+<p>“No que devemos investir para melhorar nossos lucros?”.</p>
+</blockquote>
+
+<p>Verificando os coeficientes, podemos indicar quais ações teriam mais impacto para aumentar o total gasto anualmente pelos clientes.
+Com esses resultados, a empresa pode tentar alinhas novas ações buscando melhorar a sua estratégia de negócio.</p>
+
+<p>Cada valor da Figura 7 significa que uma alteração de ‘uma’ unidade em alguma categoria, aumenta a quantidade correspondente em dinheiro gasto anualmente.</p>
+
+<p>Figura 7. Coeficientes</p>
+
+<h3 id="resultado-dos-coeficientes">Resultado dos Coeficientes:</h3>
+
+<ul>
+<li>Aumento de 1 unidade em Avg. Session Length é associado com um aumento de R\$26.10 ganho anualmente.</li>
+<li>Aumento de 1 unidade em Time on App é associado com um aumento de R\$38.95 ganho anualmente.</li>
+<li>Aumento de 1 unidade em Time on Website é associado com um aumento de R\$0.80 ganho anualmente.</li>
+<li>Aumento de 1 unidade em Length of Membership é associado com um aumento de R\$61,63 ganho anualmente.</li>
+</ul>
+
+<p>A partir desses resultados, nosso cliente pode agora decidir como agir dentro da sua empresa. Algumas ações possíveis:</p>
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p>Melhorar a experiência do Website para tentar melhorar o retorno.
+Evoluir o aplicativo para que as pessoas passem mais tempo nele.
+Benefícios para membros mais antigos, para manter a fidelidade.
+Regressão linear é uma das primeiras técnicas que aprendemos quando estudamos Machine Learning e muitos esquecem do quanto ela pode ser útil e poderosa. No caso acima, conseguimos entregar alternativas e informações de bastante valor para uma empresa com problemas reais.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introdução">Introdução</a>
+<ul>
+<li><a href="#definição-do-problema">Definição do problema</a></li>
+<li><a href="#metodologia">Metodologia</a></li>
+</ul></li>
+<li><a href="#análise">Análise</a>
+<ul>
+<li><a href="#conclusão-da-análise">Conclusão da Análise</a></li>
+</ul></li>
+<li><a href="#regressão-linear">Regressão Linear</a>
+<ul>
+<li><a href="#resultado-dos-coeficientes">Resultado dos Coeficientes:</a></li>
+</ul></li>
+<li><a href="#conclusão">Conclusão</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>
