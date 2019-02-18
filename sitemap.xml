@@ -27,10 +27,6 @@
   </url>
   
   <url>
-    <loc>http://claudiodavi.com/docs/python/</loc>
-  </url>
-  
-  <url>
     <loc>http://claudiodavi.com/docs/cv/</loc>
   </url>
   
@@ -48,6 +44,10 @@
     <loc>http://claudiodavi.com/posts/</loc>
     <lastmod>2018-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://claudiodavi.com/docs/python/</loc>
   </url>
   
   <url>

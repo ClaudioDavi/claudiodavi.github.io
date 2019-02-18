@@ -63,16 +63,6 @@ A ideia é a seguinte: Dado um arquivo com centenas de linhas relativamente long
     </item>
     
     <item>
-      <title></title>
-      <link>http://claudiodavi.com/docs/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://claudiodavi.com/docs/python/</guid>
-      <description>Python Em construção&amp;hellip;
-Visite o Blog por enquanto ;)</description>
-    </item>
-    
-    <item>
       <title>Curriculo</title>
       <link>http://claudiodavi.com/docs/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -81,6 +71,19 @@ Visite o Blog por enquanto ;)</description>
       <description>Claudio Davi Souza Engenheiro de Software | Cientista de Dados Sou comunicativo, espontâneo e motivado por novas descobertas. Atualmente trabalho focado na criação e manutenção de produtos de Machine Learning, voltados principalmente às decisões de negócio e análise preditiva de mercado.
 Habilidades
  Linguagens: Python | Java | C# | SQL Frameworks: Flask | Serverless | Spring | .NET Outros: AWS | Tensorflow | Pytorch  Projetos claudiodavi.com | claudiodavi.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://claudiodavi.com/docs/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/python/</guid>
+      <description>Python Pacotes para Data Science Obrigatórios: pandas numpy matplotlib Sckit-Learn
+Machine Learning Tensorflow PyTorch
+Facilitam a vida: pandas-profiling keras auto-keras AdaNet
+Visualização seaborn bokeh
+Easter Eggs O Python tem um easter egg muito bom, abra seu console e digita import this. O resultado é conhecido como Zen of Python, que foi criado para guiar os princípios de desenvolvimento da própria linguagem. Muitos (eu incluso) utilizo o Zen of Python para guiar o design dos meus próprios projetos.</description>
     </item>
     
     <item>
