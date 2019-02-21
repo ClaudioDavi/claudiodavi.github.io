@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://claudiodavi.com/posts/04-linguagens/</loc>
+    <lastmod>2019-02-20T22:10:39-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://claudiodavi.com/docs/books/</loc>
   </url>
   
@@ -37,12 +42,12 @@
   
   <url>
     <loc>http://claudiodavi.com/</loc>
-    <lastmod>2018-09-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-20T22:10:39-03:00</lastmod>
   </url>
   
   <url>
     <loc>http://claudiodavi.com/posts/</loc>
-    <lastmod>2018-09-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-20T22:10:39-03:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -5,10 +5,20 @@
     <link>http://claudiodavi.com/</link>
     <description>Recent content in Inicio on Claudio Davi</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 22:10:39 -0300</lastBuildDate>
     
 	<atom:link href="http://claudiodavi.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linguagens de Programacao</title>
+      <link>http://claudiodavi.com/posts/04-linguagens/</link>
+      <pubDate>Wed, 20 Feb 2019 22:10:39 -0300</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/04-linguagens/</guid>
+      <description>Sobre aprender novas linguagens de programação Você não precisa aprender mais de uma linguagem de programação. Essa idéia de que é melhor você saber várias linguagens na verdade é muito errada, porém encorajada pelos recrutadores das empresas de software por motivos ainda desconhecidos pela ciência moderna.
+Se você sabe Java, ou está aprendendo, foque em ficar bom nisso, o mercado está cheio de oportunidades pra alguém como você. Aprender outras linguagens de programação podem te dar uma vantagem &amp;lsquo;virtual&amp;rsquo; de currículo, mas além de você ter diluido seu conhecimento, existem várias outras pessoas mais qualificadas do que você, agora nas duas linguagens.</description>
+    </item>
     
     <item>
       <title>Books</title>
