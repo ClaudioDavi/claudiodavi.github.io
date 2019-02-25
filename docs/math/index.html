@@ -22,7 +22,7 @@ MathJax - Markdown and Latex for Math
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python | Claudio Davi</title>
+<title>Matemática | Claudio Davi</title>
 
 <link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
 <link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
@@ -50,7 +50,7 @@ MathJax - Markdown and Latex for Math
   
 
   <style>
-  nav ul a[href$="\2f docs\2fpython\2f "] {
+  nav ul a[href$="\2f docs\2fmath\2f "] {
       color: #004ed0;
   }
   </style>
@@ -81,86 +81,53 @@ MathJax - Markdown and Latex for Math
   <label for="menu-control">
     <img src="http://claudiodavi.com/svg/menu.svg" />
   </label>
-  <strong>Python</strong>
+  <strong>Matemática</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="python">Python</h1>
+<h1 id="matemática-para-machine-learning">Matemática para Machine Learning</h1>
 
-<hr />
-
-<h2 id="pacotes-para-data-science">Pacotes para Data Science</h2>
-
-<p>Obrigatórios:
-<code>pandas</code>
-<code>numpy</code>
-<code>matplotlib</code>
-<code>Sckit-Learn</code></p>
-
-<p>Machine Learning
-<code>Tensorflow</code>
-<code>PyTorch</code></p>
-
-<p>Facilitam a vida:
-<code>pandas-profiling</code>
-<code>keras</code>
-<code>auto-keras</code>
-<code>AdaNet</code></p>
-
-<p>Visualização
-<code>seaborn</code>
-<code>bokeh</code></p>
-
-<h2 id="easter-eggs">Easter Eggs</h2>
-
-<p>O Python tem um easter egg muito bom, abra seu console e digita <code>import this</code>.
-O resultado é conhecido como Zen of Python, que foi criado para guiar os princípios de desenvolvimento da própria linguagem. Muitos (eu incluso) utilizo o Zen of Python para guiar o design dos meus próprios projetos.</p>
-
-<h3 id="the-zen-of-python">The Zen of Python</h3>
+<p>Uma página para agregar todas as pequenas anotações em matemática que eu faço enquanto estou estudando machine learning e suas aplicações.</p>
 
 <blockquote>
-<p>Beautiful is better than ugly.</p>
-
-<p>Explicit is better than implicit.</p>
-
-<p>Simple is better than complex.</p>
-
-<p>Complex is better than complicated.</p>
-
-<p>Flat is better than nested.</p>
-
-<p>Sparse is better than dense.</p>
-
-<p>Readability counts.</p>
-
-<p>Special cases aren&rsquo;t special enough to break the rules.</p>
-
-<p>Although practicality beats purity.</p>
-
-<p>Errors should never pass silently.</p>
-
-<p>Unless explicitly silenced.</p>
-
-<p>In the face of ambiguity, refuse the temptation to guess.</p>
-
-<p>There should be one&ndash; and preferably only one &ndash;obvious way to do it.</p>
-
-<p>Although that way may not be obvious at first unless you&rsquo;re Dutch.</p>
-
-<p>Now is better than never.</p>
-
-<p>Although never is often better than <em>right</em> now.</p>
-
-<p>If the implementation is hard to explain, it&rsquo;s a bad idea.</p>
-
-<p>If the implementation is easy to explain, it may be a good idea.</p>
-
-<p>Namespaces are one honking great idea &ndash; let&rsquo;s do more of those!</p>
+<p>Mas Claudio, quanto de matemática eu preciso pra usar machine learning?</p>
 </blockquote>
 
-<hr />
+<p>Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menus um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</p>
+
+<p>Esta página não foi escrita para criar intuição sobre o assunto, apenas para ser utilizada como material de referência.</p>
+
+<h2 id="álgebra-linear">Álgebra Linear</h2>
+
+<h3 id="unit-vectors">Unit Vectors:</h3>
+
+<p>$$\boldsymbol{\hat{\textbf{i}}} =
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}$$</p>
+
+<p>$$\boldsymbol{\hat{\textbf{j}}} =
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}$$</p>
+
+<p>Portanto se:</p>
+
+<p>$$\vec{v} = \begin{bmatrix}
+2 \\ 3
+\end{bmatrix}$$</p>
+
+<p>então: $$\vec{v} = 2\boldsymbol{\hat{\textbf{i}}} + 3\boldsymbol{\hat{\textbf{j}}}$$</p>
+
+<p>Para calcular o vetor de unidade da função acima:</p>
+
+<p>$$ ||\vec{v}|| = \sqrt{2^2 + 3^2} $$
+$$ ||\vec{v}|| = \sqrt{13} $$</p>
+
+<p>Fazendo com que o unit vector <strong>û</strong>:
+$$\boldsymbol{\hat{\textbf{u}}} = \begin{pmatrix} \dfrac{2}{\sqrt{13}} \ \dfrac{3}{\sqrt{13}}  \end{pmatrix}$$</p>
 </article>
 
       
@@ -173,12 +140,11 @@ O resultado é conhecido como Zen of Python, que foi criado para guiar os princ�
   <aside class="book-toc fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#python">Python</a>
+<li><a href="#matemática-para-machine-learning">Matemática para Machine Learning</a>
 <ul>
-<li><a href="#pacotes-para-data-science">Pacotes para Data Science</a></li>
-<li><a href="#easter-eggs">Easter Eggs</a>
+<li><a href="#álgebra-linear">Álgebra Linear</a>
 <ul>
-<li><a href="#the-zen-of-python">The Zen of Python</a></li>
+<li><a href="#unit-vectors">Unit Vectors:</a></li>
 </ul></li>
 </ul></li>
 </ul>

@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Anotações</title>
+      <link>http://claudiodavi.com/docs/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/notes/</guid>
+      <description>Anotações tecnicas gerais Dicas em Data Science  Não importa o que você esteja fazendo, sempre tenha backup. Teus dados iniciais nunca devem ser alterados. Tenha backup de tudo. Use uma estrutura para seus projetos, recomendo e uso o Cookie Cutter Data Science. Tenha um backup de tudo. Use Git. Se você escreve código, uma boa prática é utilizar boas práticas de programação. Use Git. Tenha Backup. KDD e CRISP-DM são legais, mas não se prenda.</description>
+    </item>
+    
+    <item>
       <title>Books</title>
       <link>http://claudiodavi.com/docs/books/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -28,6 +37,17 @@
       <description>Claudio Davi Souza Engenheiro de Software | Cientista de Dados Sou comunicativo, espontâneo e motivado por novas descobertas. Atualmente trabalho focado na criação e manutenção de produtos de Machine Learning, voltados principalmente às decisões de negócio e análise preditiva de mercado.
 Habilidades
  Linguagens: Python | Java | C# | SQL Frameworks: Flask | Serverless | Spring | .NET Outros: AWS | Tensorflow | Pytorch  Projetos claudiodavi.com | claudiodavi.</description>
+    </item>
+    
+    <item>
+      <title>Matemática</title>
+      <link>http://claudiodavi.com/docs/math/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/math/</guid>
+      <description>Matemática para Machine Learning Uma página para agregar todas as pequenas anotações em matemática que eu faço enquanto estou estudando machine learning e suas aplicações.
+ Mas Claudio, quanto de matemática eu preciso pra usar machine learning?
+ Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menus um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</description>
     </item>
     
     <item>
