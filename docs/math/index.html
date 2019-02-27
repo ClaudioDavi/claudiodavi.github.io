@@ -95,31 +95,25 @@ MathJax - Markdown and Latex for Math
 <p>Mas Claudio, quanto de matemática eu preciso pra usar machine learning?</p>
 </blockquote>
 
-<p>Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menus um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</p>
+<p>Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menos um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</p>
 
 <p>Esta página não foi escrita para criar intuição sobre o assunto, apenas para ser utilizada como material de referência.</p>
 
 <h2 id="álgebra-linear">Álgebra Linear</h2>
 
-<h3 id="unit-vectors">Unit Vectors:</h3>
+<h3 id="vetor-unidade">Vetor Unidade</h3>
 
-<p>$$\boldsymbol{\hat{\textbf{i}}} =
-\begin{bmatrix}
+<p>$$\boldsymbol{\hat{\textbf{i}}} = \begin{bmatrix}
 1 \\ 0
-\end{bmatrix}$$</p>
-
-<p>$$\boldsymbol{\hat{\textbf{j}}} =
-\begin{bmatrix}
+\end{bmatrix} \hspace{0.5cm} e \hspace{0.5cm} \boldsymbol{\hat{\textbf{j}}} = \begin{bmatrix}
 0 \\ 1
-\end{bmatrix}$$</p>
+\end{bmatrix} $$</p>
 
 <p>Portanto se:</p>
 
 <p>$$\vec{v} = \begin{bmatrix}
 2 \\ 3
-\end{bmatrix}$$</p>
-
-<p>então: $$\vec{v} = 2\boldsymbol{\hat{\textbf{i}}} + 3\boldsymbol{\hat{\textbf{j}}}$$</p>
+\end{bmatrix} \hspace{0.5cm} então: \hspace{0.5cm} \vec{v} = 2\boldsymbol{\hat{\textbf{i}}} + 3\boldsymbol{\hat{\textbf{j}}}$$</p>
 
 <p>Para calcular o vetor de unidade da função acima:</p>
 
@@ -128,6 +122,109 @@ $$ ||\vec{v}|| = \sqrt{13} $$</p>
 
 <p>Fazendo com que o unit vector <strong>û</strong>:
 $$\boldsymbol{\hat{\textbf{u}}} = \begin{pmatrix} \dfrac{2}{\sqrt{13}} \ \dfrac{3}{\sqrt{13}}  \end{pmatrix}$$</p>
+
+<h3 id="soma-de-vetores">Soma de Vetores</h3>
+
+<p>$$\vec{v} = \vec{a} + \vec{b}$$
+$$\vec{v} = \begin{bmatrix}
+2 \\ 3
+\end{bmatrix} + \begin{bmatrix}
+4 \\ 8
+\end{bmatrix} = \begin{bmatrix}
+2+4 \\ 3+8
+\end{bmatrix}$$</p>
+
+<p>$$\vec{v} = \begin{bmatrix}
+6 \\ 11
+\end{bmatrix}$$</p>
+
+<h3 id="multiplicação-de-vetor-por-scalar">Multiplicação de vetor por scalar</h3>
+
+<p>$$2\vec{v} = \begin{bmatrix}
+2 \cdot x \\ 2 \cdot y
+\end{bmatrix} = \begin{bmatrix}
+2x \\ 2y
+\end{bmatrix} $$</p>
+
+<h3 id="combinação-linear">Combinação Linear</h3>
+
+<p>$$a\vec{v} + b\vec{w}$$</p>
+
+<ul>
+<li><strong>span</strong> entre vetores é o grupo de todas as combinações de possíveis vetores entre <em>a</em> e <em>b</em></li>
+<li><strong>Linearmente dependentes</strong>: dois vetores são linearmente dependentes quando um vetor <strong>û</strong>  pode ser removido de uma combinação de vetores e o <em>span</em> não é reduzido.</li>
+<li><strong>Linearmente independentes</strong> Um vetor é linearmente independente quando ao ser adicionado a combinação de vetores adiciona uma nova dimensão ao <em>span</em></li>
+</ul>
+
+<h3 id="transformação-linear">Transformação Linear</h3>
+
+<p>Uma transformação linear pode ser representada pelo &ldquo;movimento&rdquo; dos vetores de unidade de um vetor.
+$$\vec{v} = \begin{bmatrix}
+-1 \\ 2
+\end{bmatrix} = $$
+$$\vec{v} = -1\boldsymbol{\hat{\textbf{i}}} + 2\boldsymbol{\hat{\textbf{j}}} = $$
+$$(Transformado)\vec{v} = -1(\boldsymbol{\hat{\textbf{i}}} Transformado) + 2 (\boldsymbol{\hat{\textbf{j}}} Transformado) = $$
+$$ -1 \cdot \begin{bmatrix}
+1 \\ -2
+\end{bmatrix} + 2 \cdot \begin{bmatrix}
+3 \\ 0
+\end{bmatrix} = $$</p>
+
+<p>$$\begin{bmatrix}
+-1 \cdot 1 + 2 \cdot 3 \\ -1 \cdot -2 + 2 \cdot 0
+\end{bmatrix} = \begin{bmatrix}
+5 \\ 2
+\end{bmatrix}$$
+</br>
+</br>
+Em geral, podemos representar os vetores de unidade <strong>î</strong> e <strong>ĵ</strong> como uma matriz de duas dimensões:</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} = $$</p>
+
+<p>$$\boldsymbol{\hat{\textbf{i}}} = \begin{bmatrix}
+a \\ c
+\end{bmatrix} \hspace{0.5cm} e \hspace{0.5cm} \boldsymbol{\hat{\textbf{j}}} = \begin{bmatrix}
+b \\ d
+\end{bmatrix} $$</p>
+
+<p>Aplicando essa transformação para qualquer vetor [ <em>x, y</em> ] teríamos o seguinte:
+$$ \begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+x \\ y
+\end{bmatrix} \hspace{0.5cm} ou \hspace{0.5cm} x \cdot \begin{bmatrix}
+a \\ c
+\end{bmatrix} + y \cdot \begin{bmatrix}
+b \\ d
+\end{bmatrix}$$</p>
+
+<h3 id="multiplicação-de-matriz">Multiplicação de Matriz</h3>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+e &amp; f \\ g &amp; h
+\end{bmatrix} = \begin{bmatrix}
+x_1 &amp; x_2 \\ x_3 &amp; x_4
+\end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+e \\ g
+\end{bmatrix} = e \cdot  \begin{bmatrix} a \\ c \end{bmatrix} + g \cdot \begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} x_1 \\ x_3 \end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+f \\ h
+\end{bmatrix} = f \cdot  \begin{bmatrix} a \\ c \end{bmatrix} + h \cdot \begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} x_2 \\ x_4 \end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a \cdot e + b \cdot g &amp; a \cdot f + b \cdot h \\ c \cdot e + d \cdot g &amp; c \cdot f + d \cdot h
+\end{bmatrix}$$</p>
 </article>
 
       
@@ -144,7 +241,12 @@ $$\boldsymbol{\hat{\textbf{u}}} = \begin{pmatrix} \dfrac{2}{\sqrt{13}} \ \dfrac{
 <ul>
 <li><a href="#álgebra-linear">Álgebra Linear</a>
 <ul>
-<li><a href="#unit-vectors">Unit Vectors:</a></li>
+<li><a href="#vetor-unidade">Vetor Unidade</a></li>
+<li><a href="#soma-de-vetores">Soma de Vetores</a></li>
+<li><a href="#multiplicação-de-vetor-por-scalar">Multiplicação de vetor por scalar</a></li>
+<li><a href="#combinação-linear">Combinação Linear</a></li>
+<li><a href="#transformação-linear">Transformação Linear</a></li>
+<li><a href="#multiplicação-de-matriz">Multiplicação de Matriz</a></li>
 </ul></li>
 </ul></li>
 </ul>
