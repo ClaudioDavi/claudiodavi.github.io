@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAGscience - Meu Pacote Python | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fposts\2f 05-python-package\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>Ceticismo de Dados</em></p>
+
+<ul>
+<li><a href="http://claudiodavi.com/posts/"><strong>Blog</strong></a></li>
+<li><a href="http://claudiodavi.com/docs/notes/">Tutoriais e Anotações</a>
+
+<ul>
+<li><a href="http://claudiodavi.com/docs/notes/">Dicas em Data Science</a></li>
+<li><a href="http://claudiodavi.com/docs/python/">Python</a></li>
+<li><a href="http://claudiodavi.com/docs/math/">Matemática</a></li>
+<li><a href="http://claudiodavi.com/docs/books/">Livros e Referencias</a></li>
+</ul></li>
+<li><a href="http://claudiodavi.com/docs/cv/"><strong>Curriculo</strong></a></li>
+<li><a href="http://claudiodavi.com/tcc/intro/">Trabalho de Conclusão de curso - ES</a></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-posts mr-auto">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>DAGscience - Meu Pacote Python</strong>
+</header>
+
+      
+<header>
+  <h1>DAGscience - Meu Pacote Python</h1>
+  <h5>
+    <strong>March 10, 2019</strong>
+  </h5>
+</header>
+<article class="markdown">
+
+<h2 id="então-eu-meio-que-escrevi-uma-biblioteca">Então, eu meio que escrevi uma biblioteca</h2>
+
+<p>No meu trabalho recentemente venho fazendo diversos experimentos para melhorar a performance dos modelos de <em>machine learning</em> que tenho criado, embora nem todos vão para produção, eu sempre acabo escrevendo o mesmo workflow: Dados entram -&gt; são transformados -&gt; o modelo é treinado e depois salvo para ser utilizado nos produtos.</p>
+
+<p>Antes de me tornar oficialmente <em>Cientista de Dados</em> eu sou um <strong>Engenheiro de Software</strong> e por isso eu gosto não só de construir modelos, mas de <em>criar programas que me sejam úteis e me facilitem a vida</em>. Nos ultimos dias venho escrevendo (mais lentamente do que gostaria) uma biblioteca que me ajuda a dar estrutura ao meu workflow. Esse modelo que eu acabei criando me ajuda a dar estrutura para os meus projetos.</p>
+
+<p>O objetivo do projeto é esse mesmo: Simplificar o processo da Engenharia de Machine Learning com técnicas de Engenharia de Software.</p>
+
+<h3 id="grafos-direcionados-acíclicos-dag">Grafos Direcionados Acíclicos (DAG)</h3>
+
+<p>Em algum momento durante as minhas pesquisas eu caí nesse termo: <strong>Directed Acyclic Graph (DAG)</strong>. Em resumo <strong>DAG</strong> significa um fluxo com uma entrada e saída bem definidas onde não existe a possibilidade de voltar uma fase, você pode até pular algumas fases, mas seu caminho é sempre pra frente. Olhando meus pequenos projetos, eu vi que justamente esse era meu workflow desde o começo. Começo buscando dados da fonte original, tratando, criando features e treinando um modelo. <em>PERFECT FIT</em>.</p>
+
+<h3 id="sobre-a-biblioteca">Sobre a biblioteca</h3>
+
+<p>Recentemente lendo sobre algumas novas tendências e bibliotecas, eu li um bom tutorial de como criar seu próprio pacote python e decidi colocar minha idéia em prática, em alguns dias eu extraí o que era útil dos meus projetos e o que funcionava e criei uma arquitetura abstrata para ser seguida. O pacote por enquanto está em <em>Beta</em> e foi feito com a necessidade de ser o menos invasivo possível, confiando apenas em Python puro pra funcionar.</p>
+
+<p>Se você leu até aqui, provavelmente achou o projeto interessante. Portanto segue o link pra você visitar:</p>
+
+<p><a href="https://github.com/ClaudioDavi/dagscience">DAGscience</a></p>
+
+<p>Vale lembrar que ainda está em beta, portanto aceito idéias e sujestões via Twitter em @ClaudioDavi ou via uma Issue na página do projeto no github!
+</br>
+</br></p>
+
+<hr />
+
+<p></br>
+Se você gostou desse texto e gostaria de ler mais postagens sobre Machine Learning Aplicado, Engenharia de Software e afins, clique nos links ao lado. Qualquer perguntas que você tenha, pode me mandar via Twitter em @claudiodavi ou e-mail em cdavisouza [@] gmail.com . Eu sempre respondo!</p>
+</article>
+
+    </div>
+  </main>
+  
+
+  
+  
+</body>
+
+</html>

@@ -21,6 +21,16 @@ Se você sabe Java, ou está aprendendo, foque em ficar bom nisso, o mercado est
     </item>
     
     <item>
+      <title>DAGscience - Meu Pacote Python</title>
+      <link>http://claudiodavi.com/posts/05-python-package/</link>
+      <pubDate>Sun, 10 Mar 2019 19:30:26 -0300</pubDate>
+      
+      <guid>http://claudiodavi.com/posts/05-python-package/</guid>
+      <description>Então, eu meio que escrevi uma biblioteca No meu trabalho recentemente venho fazendo diversos experimentos para melhorar a performance dos modelos de machine learning que tenho criado, embora nem todos vão para produção, eu sempre acabo escrevendo o mesmo workflow: Dados entram -&amp;gt; são transformados -&amp;gt; o modelo é treinado e depois salvo para ser utilizado nos produtos.
+Antes de me tornar oficialmente Cientista de Dados eu sou um Engenheiro de Software e por isso eu gosto não só de construir modelos, mas de criar programas que me sejam úteis e me facilitem a vida.</description>
+    </item>
+    
+    <item>
       <title>Analise de Emprestimo</title>
       <link>http://claudiodavi.com/posts/03-emprestimo/</link>
       <pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate>
