@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engenharia de Features | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2f ds-feature\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>cdavisouza[at]gmail.com</em></p>
+
+<p>Comunicativo, espontâneo e sempre aprendendo algo novo.</p>
+
+<p><em>Cientista de Dados @ Gofind.online</em></p>
+
+<p><em>Engenheiro de Software</em></p>
+
+<p><em>Pos-Graduando Data Science PUC</em></p>
+
+<p>&ldquo;Build systems like the great engineer you are, not like the Machine Learning expert you aren&rsquo;t&rdquo; - Google</p>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Engenharia de Features</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="redução-de-dimensionalidade-em-feature-engineering">Redução de Dimensionalidade em Feature Engineering</h1>
+
+<h2 id="feature-engineering">Feature Engineering</h2>
+
+<p>Feature engineering consiste em criar ou remover features em um dataset procurando melhorar o entendimento do problema pelo algoritmo a ser utilizado. Se feito corretamente, pode melhorar a performance do modelo de Machine Learning, um caso especialmente conhecido é que geralmente é nesta fase onde os modelos campeões das competições do Kaggle se destacam.</p>
+
+<p>Um Survey - bastante técnico - em redução de dimensionalidade: <a href="https://arxiv.org/pdf/1403.2877.pdf">Link</a></p>
+
+<h3 id="técnicas-de-redução-de-dimensionalidade">Técnicas de redução de dimensionalidade.</h3>
+
+<ul>
+<li><strong>Eliminação de ruídos</strong></li>
+<li><strong>Generalização</strong> Consiste em criar novas features a partir da generalização das features presentes. Ex.: Gato -&gt; Felino -&gt; Mamífero -&gt; Animal | Cachorro -&gt; Canino -&gt; Mamífero -&gt; Animal. Portanto existe um quoeficiente de similaridade entre gato e cachorro ao compartilhar características de mamíferos e de animais. É uma tecnica que requer bastante conhecimento de domínio.</li>
+
+<li><p><strong>Normalização</strong>: Consiste no ajuste da escala das variáveis, geralmente sendo utilizada uma escala de 0 a 1 para todas as variáveis numéricas.</p></li>
+
+<li><p><strong>Transformação</strong></p>
+
+<ul>
+<li><em>Discretizar</em>:</li>
+<li><strong>Intervalos</strong> Separação de variáveis em categorias baseadas em intervalo. Por exemplo categorizar idades em um intervalos de idades.</li>
+<li><strong>Número de partições</strong> No contexto de data mining aplicado a machine learning, particionamento consiste em quebrar o dataset em diversos pequenos datasets para treinamento, teste e validação.</li>
+<li><strong>Entropia</strong> É o nivel de incerteza de um certo dado/feature é utilizado para controlar como uma decision tree vai criar suas ramificações.</li>
+</ul></li>
+
+<li><p>Redução de dimensionalidade (<a href="https://www.knime.com/blog/seven-techniques-for-data-dimensionality-reduction"><em>source</em></a>)</p>
+
+<ul>
+<li>Seleção de features
+
+<ul>
+<li><strong>Missing Values Ratio</strong>: Colunas com muitos valores faltantes geralmente não carregam muita informação, esta técnica consiste em remover essas colunas a partir de um determinado ponto. Ex.: Mais de 15% faltante pode excluir.</li>
+<li><strong>Low Variance Filter</strong>: Colunas com pouca variação de conteúdo também carregam pouca informação. Para essas colunas, também pode-se definir uma barreira para eliminação, similar ao exemplo acima.</li>
+<li><strong>High Correlation Filter</strong>: Quando duas colunas são muito similares, ou tem tendências similares elas costumam carregar o mesmo tipo de informação, portanto uma delas pode também ser eliminada.</li>
+<li><strong>Random Forests</strong>: Além de classificação, podem ser utilizadas para extração de features. Uma abordagem seria criar diversas, (1000) Random Forests com poucos leveis (2~4) e selecionar poucas colunas para serem classificadas. As colunas que forem mais selecionadas para o primeiro split geralmente é uma feature significativa.</li>
+<li><strong>Backwards feature extraction</strong>: Esta técnica é um pouco mais trabalhosa. É utilizado o algoritmo que o usuário acha mais apropriado para o problema e são selecionadas todas as colunas <em>n</em>. Depois de treinar, guardar o resultado de erro. Após essa etapa, remover uma coluna <em>n-1</em> e treinar novamente. Eliminando as features que não impactarem significativamente no erro do treinamento.</li>
+<li><strong>Forward feature selection</strong>: Esta técnica utiliza justamente o processo contrário ao <em>Backwards feature extraction</em>, treinamos o algoritmo com uma feature e a cada treinamento adicionamos mais uma. As features que não impactarem na acurácia, não devem ser inseridas.</li>
+</ul></li>
+<li>Componentes:
+
+<ul>
+<li><strong>Factor analysis</strong>: Esta técnica tende a ser similar com o <em>High Correlation Filter</em> e com a ténica de <em>Generalização</em>, ela é utilizada para descrever a variabilidade entre observações em um numero potencialmente menor de fatores. Criando uma feature que pode representar um grupo maior de observações reduzindo a dimensionalidade do dataset.</li>
+<li><strong>PCA</strong>: <em>Principal component Analysis</em> Esta técnica consiste em utilizar um algoritmo que aplica transformações lineares na matriz de features para combinar features reduzindo sua dimensionalidade. Com isso esta técnica invariavelmente gera perda de interpretabilidade, em favor de redução, e muitas vezes até mesmo melhora a performance e acurácia do modelo. É importante ressaltar que todas as colunas devem ser normalizadas antes de serem inseridas em um algoritmo de PCA.</li>
+<li><strong>ICA</strong>: <em>Independent Component Analysis</em> É uma técnica estatística computacional focada em encontrar fatores escondidos em uma série de dados aparentemente aleatória. Assume-se que os dados são uma mistura linear de algumas variáveis latentes. A saída dessa técnica são novos componentes que podem ser utilizados no modelo de Machine Learning <a href="https://www.cs.helsinki.fi/u/ahyvarin/whatisica.shtml">Leia mais</a>.</li>
+</ul></li>
+<li>Projection Based:
+
+<ul>
+<li><strong>ISOMAP</strong> É uma tecnica similar ao <em>PCA</em> porém orientada ao mapeamento não linear de dados, como por exemplo, dados em uma esfera, é amplamente utilizado em video tracking e muitos outros tipos processamento de imagem e vídeo <a href="http://benalexkeen.com/isomap-for-dimensionality-reduction-in-python/">Leia mais</a>.</li>
+<li><strong>t-SNE</strong>: É mais um algoritmo de redução de dimensionalidade não linear para datasets multidimensionais para facilitar a visualização. Fazendo com que cada ponto multidimensional seja representado por um ponto em um espaço bi ou tri-dimensional onde objetos parecidos viram pontos próximos, e objetos menos parecidos se tornam pontos distantes porém com alta probabilidade. <a href="https://lvdmaaten.github.io/tsne/">Leia Mais</a></li>
+<li><strong>UMAP</strong>: Similar ao <em>t-SNE</em> também é utilizado para redução dimensional em espaços não lineares, mas não se limita a dimensionalidade do problema como seu antecessor.</li>
+</ul></li>
+</ul></li>
+</ul>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

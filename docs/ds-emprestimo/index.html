@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analise de Emprestimo | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2f ds-emprestimo\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>cdavisouza[at]gmail.com</em></p>
+
+<p>Comunicativo, espontâneo e sempre aprendendo algo novo.</p>
+
+<p><em>Cientista de Dados @ Gofind.online</em></p>
+
+<p><em>Engenheiro de Software</em></p>
+
+<p><em>Pos-Graduando Data Science PUC</em></p>
+
+<p>&ldquo;Build systems like the great engineer you are, not like the Machine Learning expert you aren&rsquo;t&rdquo; - Google</p>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Analise de Emprestimo</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="analisando-dados-de-empréstimo">Analisando dados de empréstimo</h1>
+
+<p>Como de costume, faremos uma análise, algumas visualizações para entender nossos dados e depois utilizaremos nosso modelo de Machine Learning. Nossos dados dessa vez vêm de uma plataforma chamada Lending Club que disponibiliza os dados no seu website.</p>
+
+<p>O Lending Club é uma plataforma de empréstimos americana onde pessoas podem encontrar outras pessoas para pegar empréstimos pessoais. Os dados da utilizados nesse estudo são de 2007 a 2010 disponíveis pelo link acima.</p>
+
+<h2 id="analise">Analise</h2>
+
+<p>O objetivo do projeto é criar um modelo para predizer se os clientes vão conseguir pagar completamente um empréstimo feito pela plataforma, dadas as informações do seu empréstimo. Para isso, utilizaremos as seguintes colunas:</p>
+
+<ul>
+<li><strong>credit.policy</strong>: 1 se o cliente atende os requisitos necessários para poder aplicar por um empréstimo no LendingClub.com 0 caso contrário.</li>
+<li><strong>purpose</strong>: O propósito (objetivo) do empréstimo. Pode conter os seguintes valores (“credit_card”, “debt_consolidation”, “educational”, “major_purchase”, “small_business” e “all_other”).</li>
+<li><strong>int.rate</strong>: A taxa de juros do empréstimo, em decimal. Pessoas que são julgadas arriscadas para receber empréstimo recebem juros mais altos.</li>
+<li><strong>installment</strong>: O valor da prestação devido pelo recebedor do empréstimo se o empréstimo é aprovado.</li>
+<li><strong>log.annual.inc</strong>: O registro reportado pelo recebedor do empréstimo de sua renda anual.</li>
+<li><strong>dti</strong>: A quantidade de dívida dividido pela renda anual.</li>
+<li><strong>fico</strong>: a pontuação FICO do recebedor do empréstimo .</li>
+<li><strong>days.with.cr.line</strong>: O número de dias que o recebedor do empréstimo tem tido uma linha de crédito.</li>
+<li><strong>revol.bal</strong>: Quantidade não paga ao fim do ciclo de pagamento de crédito. (recebedor do empréstimo.)</li>
+<li><strong>revol.util</strong>: Uso de quantidade de crédito pelo recebedor do empréstimo relativa ao total de crédito disponível</li>
+<li><strong>inq.last.6mths</strong>: O número de consulta de credores nos últimos 6 meses (recebedor do empréstimo)</li>
+<li><strong>delinq.2yrs</strong>: O número de vezes que o recebedor de empréstimo atrasou mais de 30 dias o pagamento nos últimos 2 anos.</li>
+<li><strong>pub.rec</strong>: O número de registros públicos depreciativos do recebedor do empréstimo (pedidos de falência, penhoras fiscais ou julgamentos).</li>
+</ul>
+
+<p>Com essas informações, vamos tentar prever a coluna <em>not.fully.paid</em> que apresenta um valor de 0 caso o empréstimo tenha sido quitado, ou 1 caso o cliente tenha ficado devendo parte do valor final.</p>
+
+<p>Para começar, vamos dar uma olhada nos dados que nos foram fornecidos. Começando pela pontuação FICO daqueles que atendem ou não atendem os critérios para um empréstimo no LendingClub</p>
+
+<p><img src="../../images/emprestimo/fico.png" alt="Figura 1" /></p>
+
+<p>Figura 1. Requisitos da Pontuação FICO.</p>
+
+<p>Analisando apenas essa imagem temos uma informação importante sobre a política da empresa. Aparentemente existe uma pontuação mínima e superior a 655 pontos para que se possa ser considerado um empréstimo, existem outras razões, mas claramente vemos que o principal motivo de rejeição deve ser a pontuação de crédito do solicitante. Outra informação interessante é que quanto maior a pontuação FICO menor a quantidade de pessoas fazendo empréstimo e também menor a taxa de rejeição. Isso significa que um FICO alto, significa que as pessoas são boas pagadoras e pode também significar um poder aquisitivo mais alto.</p>
+
+<p>Outra coisa importante pra se verificar, ainda baseada no FICO, é a quantidade de pessoas que quitam a sua dívida. Podemos visualizar na Figura 2.</p>
+
+<p><img src="../../images/emprestimo/fico_ina.png" alt="Figura 2" />
+Figura 2. FICO vs Inadimplência</p>
+
+<p>Um dado já esperado nos retorna nessa imagem: Quanto maior o FICO menor a taxa de inadimplência. Isso pode explicar o motivo de ter uma política limitadora de empréstimos para pessoas com baixa pontuação. Podemos notar que a proporção daqueles que tem crédito baixo e muita inadimplência é bastante alta comparada com o resto da figura.</p>
+
+<p>Já temos algumas informações que poderíamos inferir já pela pontuação do nosso cliente se ele pagaria ou não por completo. Porém temos outro dado que pode ser tão importante quanto: Motivo do Empréstimo. Vamos então verificar a taxa de inadimplência por tipo de empréstimo:</p>
+
+<p><img src="../../images/emprestimo/ina_motive.png" alt="Figura 3" /></p>
+
+<p>Figura 3. Inadimplência por Motivo do Empréstimo</p>
+
+<p>Apenas olhando para o gráfico acima, conseguimos extrair algumas informações, a maior parte dos empréstimos feitos na plataforma são para o pagamento de dívidas, que tem a maior taxa absoluta de inadimplência porém proporcionalmente não é tão grande em relação aos outros propósitos. O que tem a maior taxa percentual de inadimplência seria a categoria ‘small_business’ onde aproximadamente metade dos empréstimos não são pagos por completo.</p>
+
+<p>Ok, já vimos bastante coisa interessante nesses dados. Sabemos quais os melhores tipos de empréstimos para se fazer, os perfis de pagadores e quem pode dar problema. Então vamos ver se conseguimos encontrar um algoritmo que faça isso.</p>
+
+<h3 id="cuidando-de-variáveis-categóricas">Cuidando de variáveis categóricas</h3>
+
+<p>Antes, temos um problema: Variáveis Categóricas. Esse tipo de variável não cai bem em um algoritmo de machine learning. No nosso caso o propósito do empréstimo é bastante importante para determinar se um empréstimo vai ser pago ou não, portanto para cada categoria vamos transformar o propósito em uma nova coluna binária (0 ou 1). Nossa nova tabela fica assim:</p>
+
+<p><img src="../../images/emprestimo/new_feat.png" alt="Figura 4" /></p>
+
+<p>Figura 4. Novas Categorias</p>
+
+<p>Na Figura 4 vemos as novas categorias criadas com uma tecnica chamada <em>one hot encoding</em>. Todas as outras colunas foram mantidas e essas foram adicionadas. Para que nosso algoritmo não faça overfitting eu também decidi excluir uma categoria aleatoriamente, com isso eu elimino o problema que pode ser resumido assim: “Se não tem nessa coluna, tenho certeza que o valor está presente em outra” causando o overfitting.</p>
+
+<h2 id="decision-trees-e-random-forests">Decision Trees e Random Forests</h2>
+
+<p>Agora, vamos utilizar Árvores de Decisão e Florestas Randômicas. Em termos simples, uma árvore de decisão é uma estrutura de dados onde cada decisão possui pelo menos duas ramificações, levando sempre a uma próxima decisão até chegar em um resultado final. Caso tenha ficado um pouco confuso, eu recomendo esse ótimo artigo (em inglês). Em Florestas randômicas, várias árvores são criadas cada uma com algumas colunas da tabela até uma ter o melhor resultado e essa é a árvore retornada. É um ótimo algoritmo para se começar qualquer análise e um bastante difícil de ser batido em muitos casos.</p>
+
+<p>Como nossos dados são simples, uma Árvore de Decisão já resolve bem o nosso caso, fazendo o treinamento de uma utilizando as bibliotecas do Scikit-learn conseguimos com árvore de decisão uma precisão aceitável, como visto na Figura 5.</p>
+
+<p><img src="../../images/emprestimo/prec_recal.png" alt="Figura 5" /></p>
+
+<p>Figura 5. Resultado da Árvore de Decisão</p>
+
+<h3 id="resultados">Resultados</h3>
+
+<p>Como temos muito mais pessoas pagantes nos nossos dados do que não pagantes, é muito mais fácil prever quem pode pagar. Isso significa que a nossa precisão para ver se a pessoa consegue pagar é de 84%. Isso também quer dizer, que não conseguimos identificar um padrão para ‘não pagadores’, mais dados de quem não consegue pagar seriam necessários para uma boa previsão.</p>
+
+<p>Com Florestas Randômicas, nosso resultado é visto na Figura 6.</p>
+
+<p><img src="../../images/emprestimo/prec_recal_2.png" alt="Figura 6" /></p>
+
+<p>Figura 6. Florestas Randômicas</p>
+
+<p>Como a precisão é a mesma do modelo anterior podemos verificar que o recall do modelo é bem mais alto para bons pagadores (0), portanto existe uma melhora mas não muito significativa. Por via das dúvidas eu testei 2 outros modelos para verificar se conseguíamos melhorar esse resultado, porém sem sucesso. Os modelos testados foram: Multinomial Naive Bayes e Linear Support Vector Machines.</p>
+
+<p>No post de hoje, analisamos dados reais da plataforma Lending Club e tentamos predizer se um empréstimo seria pago por completo ou não, dadas as entradas. Utilizamos Decision Trees e Random Forests para avaliar os dados e conseguimos um resultado aceitável para avaliação de crédito de um usuário e análise de risco de inadimplência.</p>
+
+<p></br>
+</br></p>
+
+<hr />
+
+<p></br>
+Se você gostou desse texto e gostaria de ler mais postagens sobre Machine Learning Aplicado, Engenharia de Software e afins, clique nos links ao lado. Qualquer perguntas que você tenha, pode me mandar via Twitter em @claudiodavi ou e-mail em cdavisouza [@] gmail.com . Eu sempre respondo!</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#analisando-dados-de-empréstimo">Analisando dados de empréstimo</a>
+<ul>
+<li><a href="#analise">Analise</a>
+<ul>
+<li><a href="#cuidando-de-variáveis-categóricas">Cuidando de variáveis categóricas</a></li>
+</ul></li>
+<li><a href="#decision-trees-e-random-forests">Decision Trees e Random Forests</a>
+<ul>
+<li><a href="#resultados">Resultados</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

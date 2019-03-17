@@ -1,0 +1,471 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nex",
+				"next_day\tstatement"
+			],
+			[
+				"re",
+				"read_file\tfunction"
+			],
+			[
+				"se",
+				"sections\tfunction"
+			],
+			[
+				"__",
+				"__name__"
+			],
+			[
+				"wa",
+				"warning\tfunction"
+			],
+			[
+				"ste",
+				"step_writer\tfunction"
+			],
+			[
+				"d",
+				"dagscience\tmodule"
+			],
+			[
+				"su",
+				"super\tclass"
+			],
+			[
+				"Mock",
+				"MockSaveModel\tclass"
+			],
+			[
+				"MOck",
+				"MockTrain\tclass"
+			],
+			[
+				"Moc",
+				"MockGetData\tclass"
+			],
+			[
+				"Mo",
+				"MockSaveModel\tclass"
+			],
+			[
+				"M",
+				"MockTrain\tclass"
+			],
+			[
+				"s",
+				"step_saver\tfunction"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"read",
+				"read_dict\tfunction"
+			],
+			[
+				"set",
+				"setdefault\tfunction"
+			],
+			[
+				"con",
+				"configfile\tstatement"
+			],
+			[
+				"confi",
+				"config\tstatement"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"wr",
+				"write\tfunction"
+			],
+			[
+				"step",
+				"step_1"
+			],
+			[
+				"Tas",
+				"TaskSaveModel\tclass"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
+			"settings":
+			{
+				"buffer_size": 3235,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
+			"settings":
+			{
+				"buffer_size": 2789,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"activa",
+				"Virtualenv: Activate"
+			],
+			[
+				"virtu",
+				"Virtualenv: Activate"
+			],
+			[
+				"pep",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pep8",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"anacon",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"vi",
+				"Build With: Python + Virtualenv"
+			],
+			[
+				"projec",
+				"Project: Edit Project"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"virtual",
+				"Virtualenv: Activate"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"pac",
+				"Package Control: Disable Package"
+			],
+			[
+				"sublime",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"DEfault",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"prefere",
+				"Preferences: Key Bindings"
+			],
+			[
+				"se",
+				"Preferences: Settings"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 212.0,
+		"history":
+		[
+			"import sys; sys.executable",
+			"python",
+			"import sys;sys.executable",
+			"sys.executable",
+			"import sys",
+			"sys.executable",
+			"print(sys.executable)",
+			"import sys",
+			"print(sys.executable)",
+			"import sys",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/claudiosouza/Documents/proj/twitter_scraping"
+	],
+	"file_history":
+	[
+		"/home/claudiosouza/Documents/proj/twitter_scraping/bolsobot.py",
+		"/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
+		"/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
+		"/home/claudiosouza/Documents/proj/twitter_scraping/api_keys.json",
+		"/home/claudiosouza/Documents/proj/dagscience/tests/__init__.py",
+		"/home/claudiosouza/Documents/proj/DAG/src/dagscience.sublime-project",
+		"/home/claudiosouza/Documents/proj/dagscience/tests/mock_workflow.py",
+		"/home/claudiosouza/Documents/proj/dagflow/examples/example.py",
+		"/home/claudiosouza/Documents/proj/dagflow/dagflow.sublime-project",
+		"/home/claudiosouza/Documents/proj/DAG/src/workflow.py",
+		"/home/claudiosouza/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/claudiosouza/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"markdonw_live_preview_last_run": 1552478003.25,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1552499190.71,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 69.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 174.0
+	},
+	"output.exec":
+	{
+		"height": 174.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Virtualenv/Python + Virtualenv.sublime-build",
+	"project": "twitter-scraper.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 574.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

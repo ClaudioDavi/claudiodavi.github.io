@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Snippets | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fpy-snippets\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>cdavisouza[at]gmail.com</em></p>
+
+<p>Comunicativo, espontâneo e sempre aprendendo algo novo.</p>
+
+<p><em>Cientista de Dados @ Gofind.online</em></p>
+
+<p><em>Engenheiro de Software</em></p>
+
+<p><em>Pos-Graduando Data Science PUC</em></p>
+
+<p>&ldquo;Build systems like the great engineer you are, not like the Machine Learning expert you aren&rsquo;t&rdquo; - Google</p>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Python Snippets</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h2 id="introdução">Introdução</h2>
+
+<p>Como desenvolvedor, temos muitos desafios interessantes e divertidos para solucionar durante o nosso dia a dia. Alguns deles, acabam sendo dentro da nossa própria code-base, outros podem ser resolvidos com alguns snippets e hacks utilizando outras linguagens e técnicas.</p>
+
+<p>Recentemente surgiu um desafio que foi bastante divertido pra resolver, principalmente porque seria bastante complexo de resolver em JAVA.</p>
+
+<p>A ideia é a seguinte: Dado um arquivo com centenas de linhas relativamente longas e formatado em JSON, meu objetivo era identificar quais dessas linhas eram similares o bastante que com poucas alterações pudessem ser unificadas. Obtendo esse resultado, poderíamos diminuir o tamanho desse arquivo e por consequência, melhorar o desempenho do nosso produto.</p>
+
+<p>Comecei quebrando o desafio em várias partes.</p>
+
+<ol>
+<li><p>Ler o arquivo JSON e guardar ele em memória.</p></li>
+
+<li><p>Identificar quais as técnicas que eu utilizaria para fazer a comparação das linhas</p></li>
+
+<li><p>Comparar cada uma das linhas e guardar o resultado em um arquivo distinto.</p></li>
+</ol>
+
+<h2 id="primeira-fase">Primeira fase:</h2>
+
+<h3 id="ler-o-arquivo-json-e-guardar-ele-em-memória">Ler o arquivo JSON e guardar ele em memória.</h3>
+
+<p>O formato do arquivo é mais ou menos o seguinte:</p>
+
+<pre><code>[
+  {
+    &quot;value&quot;: 1,
+    &quot;string&quot;:'String que eu quero comparar'
+  },
+  {
+    &quot;value&quot;: 2,
+    &quot;string&quot;:'outra string que eu quero comparar'
+  }
+]
+</code></pre>
+
+<p>Para fazer a análise então, vamos gravar em uma lista as strings que precisamos verificar:</p>
+
+<pre><code>import json
+#Carrega o arquivo pra memória e filtra o que a gente quer analisar
+with open('file_with_strings.json') as file_data:
+    data = json.load(file_data)
+      list_strings = []
+      for item in data.values():
+          for it in item:
+            list_strings.append(it[&quot;string&quot;])
+</code></pre>
+
+<p>Python faz com que seja bastante fácil você ler um arquivo. E ainda dentro da biblioteca padrão a gente já tem um pacote chamado JSON que com ele conseguimos reconhecer exatamente os atributos dentro de cada objeto JSON. No exemplo acima, eu crio um objeto data que recebe o retorno do método json.load(), percorro os valores dentro desse objeto buscando apenas pelos atributos que são importantes pra mim (nesse caso, “string”) e adiciono a minha lista que vamos utilizar mais adiante. Primeira etapa concluída.</p>
+
+<h2 id="segunda-fase">Segunda fase</h2>
+
+<h3 id="identificar-tecnicas">Identificar Tecnicas</h3>
+
+<p>Para a segunda etapa, busquei algumas técnicas para verificação de similaridade entre strings e selecionei duas das mais interessantes. Uma delas é o SequenceMatcher que já vem na biblioteca padrão, e a outra é a distância de Levenshtein disponível através da biblioteca jellyfish.
+O SequenceMatcher, considera a maior sequência contínua idêntica entre as dois elementos de qualquer tipo (desde que sejam ‘hasheaveis’) desconsiderando espaços em branco, linhas em branco e afins. Para este caso usaremos o ratio() onde vai nos retornar a porcentagem dessa similaridade.
+A distância de Levenshtein é mais interessante, ela considera a quantidade de caracteres que deveriam ser modificados (Incluídos, deletados ou alterados) para que as duas strings sejam idênticas. Segunda etapa concluída.</p>
+
+<h2 id="terceira-fase">Terceira Fase</h2>
+
+<h3 id="comparando-resultados">Comparando resultados</h3>
+
+<p>Nesta terceira e ultima etapa então, vamos comparar utilizando as duas medidas escolhidas e gravar em um arquivo de saída.
+Pra começar, eu criei um método que se chama ‘similar’, este método vai pegar as duas strings e criar um dicionário com as diferentes medidas e suas respectivas strings.</p>
+
+<pre><code>from difflib import SequenceMatcher
+import jellyfish
+
+def similar(primeira, proxima):
+    result = {
+    &quot;string_primeira&quot;: primeira,
+    &quot;string_proxima&quot;: proxima,
+    &quot;percentual_similar&quot;: SequenceMatcher(None, primeira, proxima).ratio(),
+    &quot;char_diferentes&quot;: jellyfish.levenshtein_distance(primeira, proxima)
+    }
+    list_of_results.append(result)
+</code></pre>
+
+<p>O código acima é bem simples, importando as duas bibliotecas, a gente cria um dicionário e dentro dele os dados que queremos utilizar, incluindo os dois calculos. No fim, colocamos esses resultados em uma lista que será depois escrita em um arquivo para facilitar a comparação.</p>
+
+<p>Como não queremos lidar com um for dentro de outro pois pode acarretar em muito tempo de processamento, a biblioteca padrão do Python oferece uma maneira bem legal e com um bom desempenho para iterar entre combinação de itens. chama-se itertools. pra isso, nós vamos importar o modulo itertools e fazer a combinação a partir da lista que criamos no passo 1.</p>
+
+<pre><code>import itertools
+#Itera sob todas as strings para comparar umas com as outras
+for primeiro, proximo in itertools.combinations(list_strings, 2):
+similar(primeiro, proximo)
+</code></pre>
+
+<p>O código acima vai fazer uma combinação de pares dos itens da lista que a gente passa por parâmetro. Se eu quisesse colocar mais de 2 por vez pra comparar eu poderia fazer itertools.combinations(list_strings, 4) e faria 4 por vez.</p>
+
+<p>Depois disso só precisamos passar o resultado para o arquivo de saída. O seguinte código toma conta do recado:</p>
+
+<pre><code>#grava em um arquivo o resultado final
+with open('final_result.txt', 'w') as outfile:
+json.dump(list_of_results, outfile)
+</code></pre>
+
+<p>Com isso, eu consegui resolver o meu problema e ainda com esse mesmo script, eu posso enfrentar problemas parecidos sem perder tempo nenhum. É importante lembrar que esse código não tem o melhor desempenho, e eu acredito que pode ser melhorado. Existem situações onde é simplesmente inviável fazer essa comparação (tentei com strings de mais de 4mil caracteres e demorou pelo menos algumas horas pra executar). Portanto use por sua conta e risco.</p>
+
+<p></br>
+</br></p>
+
+<hr />
+
+<p></br>
+Se você gostou desse texto e gostaria de ler mais postagens sobre Machine Learning Aplicado, Engenharia de Software e afins, clique nos links ao lado. Qualquer perguntas que você tenha, pode me mandar via Twitter em @claudiodavi ou e-mail em cdavisouza [@] gmail.com . Eu sempre respondo!</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introdução">Introdução</a></li>
+<li><a href="#primeira-fase">Primeira fase:</a>
+<ul>
+<li><a href="#ler-o-arquivo-json-e-guardar-ele-em-memória">Ler o arquivo JSON e guardar ele em memória.</a></li>
+</ul></li>
+<li><a href="#segunda-fase">Segunda fase</a>
+<ul>
+<li><a href="#identificar-tecnicas">Identificar Tecnicas</a></li>
+</ul></li>
+<li><a href="#terceira-fase">Terceira Fase</a>
+<ul>
+<li><a href="#comparando-resultados">Comparando resultados</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>
