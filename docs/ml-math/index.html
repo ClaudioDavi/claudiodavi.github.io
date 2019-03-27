@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matemática | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fml-math\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>cdavisouza[at]gmail.com</em></p>
+
+<p>Comunicativo, espontâneo e sempre aprendendo algo novo.</p>
+
+<p><em>Cientista de Dados @ Gofind.online</em></p>
+
+<p><em>Engenheiro de Software</em></p>
+
+<p><em>Pos-Graduando Data Science PUC</em></p>
+
+<p>&ldquo;Build systems like the great engineer you are, not like the Machine Learning expert you aren&rsquo;t&rdquo; - Google</p>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Matemática</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="matemática-para-machine-learning">Matemática para Machine Learning</h1>
+
+<p>Uma página para agregar todas as pequenas anotações em matemática que eu faço enquanto estou estudando machine learning e suas aplicações.</p>
+
+<blockquote>
+<p>Mas Claudio, quanto de matemática eu preciso pra usar machine learning?</p>
+</blockquote>
+
+<p>Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menos um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</p>
+
+<p>Esta página não foi escrita para criar intuição sobre o assunto, apenas para ser utilizada como material de referência.</p>
+
+<h2 id="álgebra-linear">Álgebra Linear</h2>
+
+<h3 id="vetor-unidade">Vetor Unidade</h3>
+
+<p>$$\boldsymbol{\hat{\textbf{i}}} = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \hspace{0.5cm} e \hspace{0.5cm} \boldsymbol{\hat{\textbf{j}}} = \begin{bmatrix}
+0 \\ 1
+\end{bmatrix} $$</p>
+
+<p>Portanto se:</p>
+
+<p>$$\vec{v} = \begin{bmatrix}
+2 \\ 3
+\end{bmatrix} \hspace{0.5cm} então: \hspace{0.5cm} \vec{v} = 2\boldsymbol{\hat{\textbf{i}}} + 3\boldsymbol{\hat{\textbf{j}}}$$</p>
+
+<p>Para calcular o vetor de unidade da função acima:</p>
+
+<p>$$ ||\vec{v}|| = \sqrt{2^2 + 3^2} $$
+$$ ||\vec{v}|| = \sqrt{13} $$</p>
+
+<p>Fazendo com que o unit vector <strong>û</strong>:
+$$\boldsymbol{\hat{\textbf{u}}} = \begin{pmatrix} \dfrac{2}{\sqrt{13}} \ \dfrac{3}{\sqrt{13}}  \end{pmatrix}$$</p>
+
+<h3 id="soma-de-vetores">Soma de Vetores</h3>
+
+<p>$$\vec{v} = \vec{a} + \vec{b}$$
+$$\vec{v} = \begin{bmatrix}
+2 \\ 3
+\end{bmatrix} + \begin{bmatrix}
+4 \\ 8
+\end{bmatrix} = \begin{bmatrix}
+2+4 \\ 3+8
+\end{bmatrix}$$</p>
+
+<p>$$\vec{v} = \begin{bmatrix}
+6 \\ 11
+\end{bmatrix}$$</p>
+
+<h3 id="multiplicação-de-vetor-por-scalar">Multiplicação de vetor por scalar</h3>
+
+<p>$$2\vec{v} = \begin{bmatrix}
+2 \cdot x \\ 2 \cdot y
+\end{bmatrix} = \begin{bmatrix}
+2x \\ 2y
+\end{bmatrix} $$</p>
+
+<h3 id="combinação-linear">Combinação Linear</h3>
+
+<p>$$a\vec{v} + b\vec{w}$$</p>
+
+<ul>
+<li><strong>span</strong> entre vetores é o grupo de todas as combinações de possíveis vetores entre <em>a</em> e <em>b</em></li>
+<li><strong>Linearmente dependentes</strong>: dois vetores são linearmente dependentes quando um vetor <strong>û</strong>  pode ser removido de uma combinação de vetores e o <em>span</em> não é reduzido.</li>
+<li><strong>Linearmente independentes</strong> Um vetor é linearmente independente quando ao ser adicionado a combinação de vetores adiciona uma nova dimensão ao <em>span</em></li>
+</ul>
+
+<h3 id="transformação-linear">Transformação Linear</h3>
+
+<p>Uma transformação linear pode ser representada pelo &ldquo;movimento&rdquo; dos vetores de unidade de um vetor.
+$$\vec{v} = \begin{bmatrix}
+-1 \\ 2
+\end{bmatrix} = $$
+$$\vec{v} = -1\boldsymbol{\hat{\textbf{i}}} + 2\boldsymbol{\hat{\textbf{j}}} = $$
+$$(Transformado)\vec{v} = -1(\boldsymbol{\hat{\textbf{i}}} Transformado) + 2 (\boldsymbol{\hat{\textbf{j}}} Transformado) = $$
+$$ -1 \cdot \begin{bmatrix}
+1 \\ -2
+\end{bmatrix} + 2 \cdot \begin{bmatrix}
+3 \\ 0
+\end{bmatrix} = $$</p>
+
+<p>$$\begin{bmatrix}
+-1 \cdot 1 + 2 \cdot 3 \\ -1 \cdot -2 + 2 \cdot 0
+\end{bmatrix} = \begin{bmatrix}
+5 \\ 2
+\end{bmatrix}$$
+</br>
+</br>
+Em geral, podemos representar os vetores de unidade <strong>î</strong> e <strong>ĵ</strong> como uma matriz de duas dimensões:</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} = $$</p>
+
+<p>$$\boldsymbol{\hat{\textbf{i}}} = \begin{bmatrix}
+a \\ c
+\end{bmatrix} \hspace{0.5cm} e \hspace{0.5cm} \boldsymbol{\hat{\textbf{j}}} = \begin{bmatrix}
+b \\ d
+\end{bmatrix} $$</p>
+
+<p>Aplicando essa transformação para qualquer vetor [ <em>x, y</em> ] teríamos o seguinte:
+$$ \begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+x \\ y
+\end{bmatrix} \hspace{0.5cm} ou \hspace{0.5cm} x \cdot \begin{bmatrix}
+a \\ c
+\end{bmatrix} + y \cdot \begin{bmatrix}
+b \\ d
+\end{bmatrix}$$</p>
+
+<h3 id="multiplicação-de-matriz">Multiplicação de Matriz</h3>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+e &amp; f \\ g &amp; h
+\end{bmatrix} = \begin{bmatrix}
+x_1 &amp; x_2 \\ x_3 &amp; x_4
+\end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+e \\ g
+\end{bmatrix} = e \cdot  \begin{bmatrix} a \\ c \end{bmatrix} + g \cdot \begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} x_1 \\ x_3 \end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a &amp; b \\ c &amp; d
+\end{bmatrix} \cdot \begin{bmatrix}
+f \\ h
+\end{bmatrix} = f \cdot  \begin{bmatrix} a \\ c \end{bmatrix} + h \cdot \begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} x_2 \\ x_4 \end{bmatrix}$$</p>
+
+<p>$$\begin{bmatrix}
+a \cdot e + b \cdot g &amp; a \cdot f + b \cdot h \\ c \cdot e + d \cdot g &amp; c \cdot f + d \cdot h
+\end{bmatrix}$$</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#matemática-para-machine-learning">Matemática para Machine Learning</a>
+<ul>
+<li><a href="#álgebra-linear">Álgebra Linear</a>
+<ul>
+<li><a href="#vetor-unidade">Vetor Unidade</a></li>
+<li><a href="#soma-de-vetores">Soma de Vetores</a></li>
+<li><a href="#multiplicação-de-vetor-por-scalar">Multiplicação de vetor por scalar</a></li>
+<li><a href="#combinação-linear">Combinação Linear</a></li>
+<li><a href="#transformação-linear">Transformação Linear</a></li>
+<li><a href="#multiplicação-de-matriz">Multiplicação de Matriz</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

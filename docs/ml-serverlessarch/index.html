@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134685803-1');
+</script>
+
+<!--
+MathJax - Markdown and Latex for Math 
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serverless Machine Learning - Arquitetura | Claudio Davi</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="http://claudiodavi.com/normalize.min.css">
+
+<link rel="stylesheet" href="../../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+<h2 class="book-brand">
+  <a href="http://claudiodavi.com">Claudio Davi</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fml-serverlessarch\2f "] {
+      color: #004ed0;
+  }
+  </style>
+<p><em>cdavisouza[at]gmail.com</em></p>
+
+<p>Comunicativo, espontâneo e sempre aprendendo algo novo.</p>
+
+<p><em>Cientista de Dados @ Gofind.online</em></p>
+
+<p><em>Engenheiro de Software</em></p>
+
+<p><em>Pos-Graduando Data Science PUC</em></p>
+
+<p>&ldquo;Build systems like the great engineer you are, not like the Machine Learning expert you aren&rsquo;t&rdquo; - Google</p>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="http://claudiodavi.com/svg/menu.svg" />
+  </label>
+  <strong>Serverless Machine Learning - Arquitetura</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="arquitetura-serverless-para-modelos-de-machine-learning">Arquitetura Serverless para Modelos de Machine Learning</h1>
+
+<h2 id="machine-learnign-e-a-ultima-milha">Machine Learnign e a ultima milha</h2>
+
+<p>Depois de extensa pesquisa, treinamentos, escolhas de métricas e avaliações de modelos o que falta? Qual a ultima milha que precisamos percorrer?</p>
+
+<p>Model Deployment geralmente é uma atividade deixada para os times de engenharia de dados, geralmente fica a cargo de um Engenheiro de Machine Learning descobrir como melhor tomar vantagem do produto produzido pelo Cientista de Dados. E quando essa pessoa não está disponível? Ou quando você cientista, também é essa pessoa? Quem poderá te defender?</p>
+
+<p>Me deparei com essa pergunta quando tive que colocar em produção meu modelo criado após meses de estudo. Como eu posso servir minhas predições, mantendo a arquitetura da empresa e de uma maneira escalável?
+A resposta dessa pergunta está no título: <strong>Serverless</strong>.</p>
+
+<h3 id="introdução-ao-serverless">Introdução ao Serverless</h3>
+
+<p>Eu era Engenheiro de Software antes de me tornar Cientista de Dados, e isso me fez estudar criação de produtos e arquitetura de produtos, mas nunca me interessei tanto por infraestrutura. Portanto, para eu não me incomodar tanto com essa parte e focar no produto eu precisava de uma arquitetura que me abstraísse essa etapa.</p>
+
+<p>Computação Serverless é um modelo de computação em nuvem que abstrai o gerenciamento da arquitetura e qualquer atividade de baixo nivel para os provedores do serviço (pense em Google Cloud Platform e Amazon Web Services).
+Com isso, nós como desenvolvedores podemos pensar em criar o nosso produto sem nos preocupar com manter, gerenciar e escalar um servidor para nossa aplicação, o provedor cuida disso.</p>
+
+<p>Porém, nem tudo são flores.</p>
+
+<p>Quando pensamos em serverless, também devemos pensar em maneiras diferentes de oferecer os serviços. O modelo serverless preza por Function as a Service. Isso significa que devemos pensar em funções que podem ser disponibilizadas. Quebrando nosso software em diversas pequenas funções que juntas atingem um objetivo. Isso faz com que se crie uma arquitetura quese como de LEGO para o seu software: várias pequenas funções que juntas atingem um objetivo em comum. Isso pode adicionar complexidade no debug, entender limitações de hardware ou mesmo limitações de transferencia de dados entre as plataformas.</p>
+
+<p>Decidir ser serverless é uma tarefa que requer bastante planejamento.</p>
+
+<h3 id="colocando-em-produção">Colocando em produção</h3>
+
+<p>Ok, você decidiu ser serverless, escolheu a sua Framework, entendeu como ela funciona e agora está pronto para colocar seu modelo de Machine Learning em produção.</p>
+
+<ol>
+<li>Precisamos colocar nosso modelo na nuvem, como eu usei a AWS como provedor, fiz upload diretamente em um bucket S3 e guardei o endereço.</li>
+<li>Precisamos também preparar os dados antes de passar para o modelo. Portanto uma função precisa ser criada para buscar os dados no banco, realizar o preprocessamento (criar as features que serão utilizadas) e chamar a função que contém o nosso modelo.</li>
+<li>Aqui a gente escreve a função do nosso modelo, precisamos fazer o download do modelo do S3, utilizar os dados passados pela função anterior e salvar o output em uma tabela do DynamoDb que será consumido pela aplicação mais tarde.</li>
+<li>Agora só precisamos chamar a função de preprocessamento. No meu caso, eu utilizei uma fila de mensagens do AWS SQS que a aplicação alimenta, já que minhas previsões não são feitas na consulta do cliente no app, mas sim na entrada dos dados. Com isso, a fila do SQS chama a primeira função e tudo funciona magicamente.</li>
+</ol>
+
+<p>Você pode conferir a arquitetura abaixo:</p>
+
+<p><img src="../../images/serverless/arch_res50.png" alt="Arquitetura" /></p>
+
+<p>No fim, o processo todo é auto-escalável. Os resultados são salvos e consumidos posteriormente. Antes de finalizar, eu gostaria de adicionar que apesar de ter estudado a arquitetura da AWS pra Machine Learning, eu achei a maioria dos produtos muito overkill pra minha necessidade. Além da documentação deles não ser das melhores.</p>
+
+<p>Caso você tenha dicas de como usar os serviços do SageMaker e das engines de ML nativas da AWS, ou queira tirar dúvidas e/ou tenha sugestões fale comigo via twitter em @claudiodavi ou manda um email pra gente conversar e trocar umas ideas em cdavisouza [at] gmail.com.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

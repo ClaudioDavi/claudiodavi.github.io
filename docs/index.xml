@@ -50,6 +50,16 @@ Um Survey - bastante técnico - em redução de dimensionalidade: Link</descript
     </item>
     
     <item>
+      <title>Serverless Machine Learning - Arquitetura</title>
+      <link>http://claudiodavi.com/docs/ml-serverlessarch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://claudiodavi.com/docs/ml-serverlessarch/</guid>
+      <description>Arquitetura Serverless para Modelos de Machine Learning Machine Learnign e a ultima milha Depois de extensa pesquisa, treinamentos, escolhas de métricas e avaliações de modelos o que falta? Qual a ultima milha que precisamos percorrer?
+Model Deployment geralmente é uma atividade deixada para os times de engenharia de dados, geralmente fica a cargo de um Engenheiro de Machine Learning descobrir como melhor tomar vantagem do produto produzido pelo Cientista de Dados.</description>
+    </item>
+    
+    <item>
       <title>DAGscience - Meu Pacote Python</title>
       <link>http://claudiodavi.com/docs/py-package/</link>
       <pubDate>Sun, 10 Mar 2019 19:30:26 -0300</pubDate>
@@ -114,10 +124,10 @@ Habilidades
     
     <item>
       <title>Matemática</title>
-      <link>http://claudiodavi.com/docs/math/</link>
+      <link>http://claudiodavi.com/docs/ml-math/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://claudiodavi.com/docs/math/</guid>
+      <guid>http://claudiodavi.com/docs/ml-math/</guid>
       <description>Matemática para Machine Learning Uma página para agregar todas as pequenas anotações em matemática que eu faço enquanto estou estudando machine learning e suas aplicações.
  Mas Claudio, quanto de matemática eu preciso pra usar machine learning?
  Eu comecei com o conhecimento básico de tudo. Apenas as operações comuns da vida cotidiana, com um pouco de embasamento estatístico simples. Porém eu acredito que você precisa de pelo menos um entendimento básico várias áreas para conseguir entender o que os algoritmos estão fazendo, como aplicá-los e saber ler os conceitos que estão sempre presentes nos artigos.</description>

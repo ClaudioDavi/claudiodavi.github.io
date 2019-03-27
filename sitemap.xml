@@ -20,6 +20,10 @@
   </url>
   
   <url>
+    <loc>http://claudiodavi.com/docs/ml-serverlessarch/</loc>
+  </url>
+  
+  <url>
     <loc>http://claudiodavi.com/docs/py-package/</loc>
     <lastmod>2019-03-10T19:30:26-03:00</lastmod>
   </url>
@@ -60,7 +64,7 @@
   </url>
   
   <url>
-    <loc>http://claudiodavi.com/docs/math/</loc>
+    <loc>http://claudiodavi.com/docs/ml-math/</loc>
   </url>
   
   <url>

@@ -99,24 +99,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
-			"settings":
-			{
-				"buffer_size": 3235,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
-			"settings":
-			{
-				"buffer_size": 2789,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -245,13 +227,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/claudiosouza/Documents/proj/twitter_scraping"
 	],
 	"file_history":
 	[
-		"/home/claudiosouza/Documents/proj/twitter_scraping/bolsobot.py",
 		"/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
 		"/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
+		"/home/claudiosouza/Documents/proj/twitter_scraping/bolsobot.py",
 		"/home/claudiosouza/Documents/proj/twitter_scraping/api_keys.json",
 		"/home/claudiosouza/Documents/proj/dagscience/tests/__init__.py",
 		"/home/claudiosouza/Documents/proj/DAG/src/dagscience.sublime-project",
@@ -295,82 +276,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/claudiosouza/Documents/proj/twitter_scraping/scrape.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
-							"markdonw_live_preview_last_run": 1552478003.25,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/claudiosouza/Documents/proj/twitter_scraping/get_metadata.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2789,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1552499190.71,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
