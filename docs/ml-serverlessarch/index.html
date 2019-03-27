@@ -98,24 +98,24 @@ A resposta dessa pergunta está no título: <strong>Serverless</strong>.</p>
 
 <p>Eu era Engenheiro de Software antes de me tornar Cientista de Dados, e isso me fez estudar criação de produtos e arquitetura de produtos, mas nunca me interessei tanto por infraestrutura. Portanto, para eu não me incomodar tanto com essa parte e focar no produto eu precisava de uma arquitetura que me abstraísse essa etapa.</p>
 
-<p>Computação Serverless é um modelo de computação em nuvem que abstrai o gerenciamento da arquitetura e qualquer atividade de baixo nivel para os provedores do serviço (pense em Google Cloud Platform e Amazon Web Services).
+<p>Computação Serverless é um modelo de computação em nuvem que abstrai o gerenciamento da arquitetura e qualquer atividade de baixo nível para os provedores do serviço (pense em Google Cloud Platform e Amazon Web Services).
 Com isso, nós como desenvolvedores podemos pensar em criar o nosso produto sem nos preocupar com manter, gerenciar e escalar um servidor para nossa aplicação, o provedor cuida disso.</p>
 
 <p>Porém, nem tudo são flores.</p>
 
-<p>Quando pensamos em serverless, também devemos pensar em maneiras diferentes de oferecer os serviços. O modelo serverless preza por Function as a Service. Isso significa que devemos pensar em funções que podem ser disponibilizadas. Quebrando nosso software em diversas pequenas funções que juntas atingem um objetivo. Isso faz com que se crie uma arquitetura quese como de LEGO para o seu software: várias pequenas funções que juntas atingem um objetivo em comum. Isso pode adicionar complexidade no debug, entender limitações de hardware ou mesmo limitações de transferencia de dados entre as plataformas.</p>
+<p>Quando pensamos em serverless, também devemos pensar em maneiras diferentes de oferecer os serviços. O modelo serverless preza por Function as a Service. Isso significa que devemos pensar em funções que podem ser disponibilizadas. Quebrando nosso software em diversas pequenas funções que juntas atingem um objetivo. Isso faz com que se crie uma arquitetura quese como de LEGO para o seu software: várias pequenas funções que juntas atingem um objetivo em comum. Isso pode adicionar complexidade no debug, dificuldade para entender as limitações do provedor.</p>
 
-<p>Decidir ser serverless é uma tarefa que requer bastante planejamento.</p>
+<p>Decidir se tornar serverless é uma tarefa que requer bastante planejamento.</p>
 
 <h3 id="colocando-em-produção">Colocando em produção</h3>
 
 <p>Ok, você decidiu ser serverless, escolheu a sua Framework, entendeu como ela funciona e agora está pronto para colocar seu modelo de Machine Learning em produção.</p>
 
 <ol>
-<li>Precisamos colocar nosso modelo na nuvem, como eu usei a AWS como provedor, fiz upload diretamente em um bucket S3 e guardei o endereço.</li>
-<li>Precisamos também preparar os dados antes de passar para o modelo. Portanto uma função precisa ser criada para buscar os dados no banco, realizar o preprocessamento (criar as features que serão utilizadas) e chamar a função que contém o nosso modelo.</li>
+<li>Precisamos colocar nosso modelo na nuvem, como eu usei a AWS como provedor, fiz upload do modelo congelado diretamente em um bucket S3 e guardei o endereço.</li>
+<li>Precisamos também preparar os dados antes de passar para o modelo. Portanto uma função precisa ser criada para buscar os dados no banco, realizar o pre-processamento (criar as features que serão utilizadas) e chamar a função que contém o nosso modelo.</li>
 <li>Aqui a gente escreve a função do nosso modelo, precisamos fazer o download do modelo do S3, utilizar os dados passados pela função anterior e salvar o output em uma tabela do DynamoDb que será consumido pela aplicação mais tarde.</li>
-<li>Agora só precisamos chamar a função de preprocessamento. No meu caso, eu utilizei uma fila de mensagens do AWS SQS que a aplicação alimenta, já que minhas previsões não são feitas na consulta do cliente no app, mas sim na entrada dos dados. Com isso, a fila do SQS chama a primeira função e tudo funciona magicamente.</li>
+<li>Agora só precisamos chamar a função de pre-processamento. No meu caso, eu utilizei uma fila de mensagens do AWS SQS que a aplicação alimenta, já que minhas previsões não são feitas na consulta do cliente no app, mas sim na entrada dos dados. Com isso, a fila do SQS chama a primeira função e tudo funciona magicamente.</li>
 </ol>
 
 <p>Você pode conferir a arquitetura abaixo:</p>
